@@ -1,5 +1,3 @@
-// 
-
 import React from "react";
 import members from "../assets/app-members.png";
 import profile from "../assets/app-profile.png";

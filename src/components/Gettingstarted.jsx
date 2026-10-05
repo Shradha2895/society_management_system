@@ -1,89 +1,9 @@
-// import React from "react";
 
-// const STEPS = [
-//   {
-//     no: "01",
-//     icon: "📲",
-//     title: "Download",
-//     desc: "Download MYTMAKAAN on your Android phone from Google Play Store.",
-//   },
-//   {
-//     no: "02",
-//     icon: "🔗",
-//     title: "Connect",
-//     desc: "Register and connect with your residential society in minutes.",
-//   },
-//   {
-//     no: "03",
-//     icon: "✨",
-//     title: "Manage",
-//     desc: "Access all your society services from one organized place.",
-//   },
-// ];
 
-// const PlayIcon = () => (
-//   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
-//     <path d="M5 3.5v17l14-8.5-14-8.5z" fill="currentColor" fillOpacity=".25" />
-//     <path d="M5 3.5l9 9M5 20.5l9-8" />
-//   </svg>
-// );
 
-// export default function GettingStarted() {
-//   return (
-//     <section id="how-it-works" className="relative overflow-hidden bg-[#101a46] py-24">
-//       {/* glow + dots */}
-//       <div className="pointer-events-none absolute left-1/4 top-0 h-[400px] w-[600px] rounded-full bg-[#14b8a6]/10 blur-3xl" />
-//       <div
-//         className="pointer-events-none absolute inset-0 opacity-30"
-//         style={{ backgroundImage: "radial-gradient(#334155 1px, transparent 1px)", backgroundSize: "28px 28px" }}
-//       />
-
-//       <div className="relative mx-auto max-w-[1200px] px-4">
-//         {/* heading */}
-//         <div className="text-center">
-//           <h2 className="text-[40px] font-extrabold leading-[1.15] tracking-tight text-white">
-//             Getting Started Is <span className="text-[#0f9d92]">Simple</span>
-//           </h2>
-//           <p className="mt-4 text-[17px] text-slate-400">Three easy steps to transform your community living.</p>
-//         </div>
-
-//         {/* steps */}
-//         <div className="relative mt-16">
-//           {/* connecting line */}
-//           <div className="absolute left-[16.66%] right-[16.66%] top-[46px] hidden h-[2px] bg-gradient-to-r from-[#14b8a6]/40 via-[#14b8a6]/60 to-[#14b8a6]/40 md:block" />
-
-//           <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3">
-//             {STEPS.map((s) => (
-//               <div key={s.no} className="flex flex-col items-center text-center">
-//                 <div className="relative flex h-[92px] w-[92px] items-center justify-center rounded-3xl border border-[#14b8a6]/30 bg-[#1a2860] text-[34px] shadow-lg">
-//                   {s.icon}
-//                   <span className="absolute -right-2 -top-2 flex h-[26px] w-[26px] items-center justify-center rounded-full bg-[#0f9d92] text-[11px] font-bold text-white ring-2 ring-[#101a46]">
-//                     {s.no}
-//                   </span>
-//                 </div>
-//                 <h3 className="mt-6 text-[20px] font-bold text-white">{s.title}</h3>
-//                 <p className="mt-3 max-w-[270px] text-[15px] leading-relaxed text-slate-400">{s.desc}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* CTA */}
-//         <div className="mt-14 flex justify-center">
-//           <a
-//             href="#"
-//             className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#0d9488] px-9 py-[17px] text-[16px] font-semibold text-white shadow-lg transition hover:brightness-110"
-//           >
-//             <PlayIcon />
-//             Download MYTMAKAAN Free
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }   
 import React from "react";
 import { Download, Link2, LayoutGrid } from "lucide-react";
+import { PLAY_STORE_URL } from "../constants";
 
 const STEPS = [
   {
@@ -106,10 +26,13 @@ const STEPS = [
   },
 ];
 
-const PlayIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
-    <path d="M5 3.5v17l14-8.5-14-8.5z" fill="currentColor" fillOpacity=".25" />
-    <path d="M5 3.5l9 9M5 20.5l9-8" />
+/* Google Play logo (4 colours) */
+const GooglePlayLogo = () => (
+  <svg viewBox="0 0 24 24" className="h-[22px] w-[22px]">
+    <path d="M3.6 2.2L13.2 12 3.6 21.8C3.3 21.5 3.1 21 3.1 20.4V3.6C3.1 3 3.3 2.5 3.6 2.2Z" fill="#00C3FF" />
+    <path d="M16.5 8.7L13.2 12 3.6 2.2C3.9 1.9 4.4 1.8 5 2.1L16.5 8.7Z" fill="#00E676" />
+    <path d="M16.5 15.3L5 21.9C4.4 22.2 3.9 22.1 3.6 21.8L13.2 12 16.5 15.3Z" fill="#FF3A44" />
+    <path d="M20.4 10.8C21.1 11.2 21.1 12.8 20.4 13.2L16.5 15.3 13.2 12 16.5 8.7 20.4 10.8Z" fill="#FFD500" />
   </svg>
 );
 
@@ -156,10 +79,12 @@ export default function GettingStarted() {
         {/* CTA */}
         <div className="mt-14 flex justify-center">
           <a
-            href="#"
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#0d9488] px-9 py-[17px] text-[16px] font-semibold text-white shadow-lg transition hover:brightness-110"
           >
-            <PlayIcon />
+            <GooglePlayLogo />
             Download MYTMAKAAN Free
           </a>
         </div>

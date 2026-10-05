@@ -127,7 +127,9 @@ const GROUPS = [
 
 export default function BuiltForEveryone() {
   return (
-    <section className="bg-white py-24">
+    // <section className="bg-white py-24">
+
+    <section id="benefits" className="scroll-mt-20 bg-white py-24">
       <div className="mx-auto max-w-[1200px] px-4">
         {/* heading */}
         <div className="text-center">
