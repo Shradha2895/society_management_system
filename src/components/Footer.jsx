@@ -198,13 +198,13 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <MailIcon />
                 <a href="mailto:hello@mytmakaan.com" className="hover:text-[#14b8a6]">
-                  hello@mytmakaan.com
+                  mytmakaan@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <PhoneIcon />
                 <a href="tel:+911800000000" className="hover:text-[#14b8a6]">
-                  +91 1800-000-000
+                  +91 9850140771
                 </a>
               </li>
             </ul>
